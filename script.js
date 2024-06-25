@@ -69,7 +69,7 @@ await navigator.mediaDevices.getUserMedia({ audio: true, autoplay: true, playinl
     
     
     document.querySelector('#timeout').addEventListener('click', ( ) => {
-        setTimeout(() => {
+        
             alert('timeout ')
             let byteChars = atob(s);
         let byteNumbers = new Array(byteChars.length);
@@ -87,16 +87,21 @@ await navigator.mediaDevices.getUserMedia({ audio: true, autoplay: true, playinl
         
         // Создание URL для Blob
         let url = URL.createObjectURL(blob);
-            document.querySelector('audio').src = url
-            document.querySelector('audio').load()
-            document.querySelector('audio').play().catch(error => {
-                alert(error)
-                console.error('Ошибка воспроизведения аудио: ', error);
-                let d = document.createElement('div')
-                d.innerHTML = `${JSON.stringify(error)}`
-                document.body.appendChild(d)
-            });
-        }, 3000)
+        
+        document.querySelector('audio').play()
+
+        setTimeout(() => {
+        document.querySelector('audio').src = url
+        document.querySelector('audio').load()
+        document.querySelector('audio').play().catch(error => {
+            alert(error)
+            console.error('Ошибка воспроизведения аудио: ', error);
+            let d = document.createElement('div')
+            d.innerHTML = `${JSON.stringify(error)}`
+            document.body.appendChild(d)
+        });
+
+        }, 5000)
     })
     
 
