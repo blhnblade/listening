@@ -2,7 +2,7 @@ let s = 'SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc3LjEwMAAAAAAAAAAAAAAA//uwAAAAAAA
 
 document.querySelector('#play').addEventListener('click', () => {
 
-
+setTimeout(() => {
 
     let byteChars = atob(s);
     let byteNumbers = new Array(byteChars.length);
@@ -52,6 +52,10 @@ document.querySelector('#play').addEventListener('click', () => {
         // });
     // }, { once: true });  // Слушатель удалится после первого клика
     
+    
+
+}, 3000)
+
     
 
 
