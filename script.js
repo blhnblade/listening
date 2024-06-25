@@ -35,7 +35,7 @@ setTimeout(() => {
         alert(e)
         console.error('Ошибка воспроизведения аудио: ', e);
         let d = document.createElement('div')
-        d.innerHTML = `${e}`
+        d.innerHTML = `${JSON.stringify(e)}`
         document.body.appendChild(d)
     });
 
