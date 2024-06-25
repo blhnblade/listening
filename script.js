@@ -50,14 +50,11 @@ setTimeout(() => {
             d.innerHTML = `${JSON.stringify(error)}`
             document.body.appendChild(d)
         });
-    }, { once: true });  // Слушатель удалится после первого клика
+    // }, { once: true });  // Слушатель удалится после первого клика
     
     
 
 }, 3000)
-
-    
-
 
     
 })
