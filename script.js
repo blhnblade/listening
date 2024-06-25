@@ -54,60 +54,60 @@ document.querySelector('#play').addEventListener('click', () => {
 
 
 
-// setTimeout(() => {
+setTimeout(() => {
 
-//     let byteChars = atob(s);
-//     let byteNumbers = new Array(byteChars.length);
+    let byteChars = atob(s);
+    let byteNumbers = new Array(byteChars.length);
     
-//     for (let i = 0; i < byteChars.length; i++) {
-//         byteNumbers[i] = byteChars.charCodeAt(i);
-//     }
+    for (let i = 0; i < byteChars.length; i++) {
+        byteNumbers[i] = byteChars.charCodeAt(i);
+    }
     
-//     // Преобразование массива чисел в Uint8Array
-//     let byteArray = new Uint8Array(byteNumbers);
+    // Преобразование массива чисел в Uint8Array
+    let byteArray = new Uint8Array(byteNumbers);
     
-//     // Создание Blob из Uint8Array с указанием типа MIME, совместимого с Safari
-//     let blob = new Blob([byteArray]);
-//     // let blob = new Blob([byteArray], { type: 'audio/mp3' });
+    // Создание Blob из Uint8Array с указанием типа MIME, совместимого с Safari
+    let blob = new Blob([byteArray]);
+    // let blob = new Blob([byteArray], { type: 'audio/mp3' });
     
-//     // Создание URL для Blob
-//     let url = URL.createObjectURL(blob);
+    // Создание URL для Blob
+    let url = URL.createObjectURL(blob);
 
-//     let audio = new Audio(url)
+    let audio = new Audio(url)
     
-//     // Создание аудиоэлемента и добавление его на страницу
-//     // const audio = document.createElement('audio');
-//     // audio.innerHTML = `<source src="${url}" type="audio/mp3">`;
-//     // audio.controls = true;
-//     // audio.src = url
-//     // document.body.appendChild(audio);
+    // Создание аудиоэлемента и добавление его на страницу
+    // const audio = document.createElement('audio');
+    // audio.innerHTML = `<source src="${url}" type="audio/mp3">`;
+    // audio.controls = true;
+    // audio.src = url
+    // document.body.appendChild(audio);
     
-//     // Добавление обработчиков ошибок
-//     audio.addEventListener('error', (e) => {
-//         alert(e)
-//         console.error('Ошибка воспроизведения аудио: ', e);
-//         let d = document.createElement('div')
-//         d.innerHTML = `${JSON.stringify(e)}`
-//         document.body.appendChild(d)
-//     });
+    // Добавление обработчиков ошибок
+    audio.addEventListener('error', (e) => {
+        alert(e)
+        console.error('Ошибка воспроизведения аудио: ', e);
+        let d = document.createElement('div')
+        d.innerHTML = `${JSON.stringify(e)}`
+        document.body.appendChild(d)
+    });
 
     
-//     // audio.play()
+    // audio.play()
     
-//     // Убедитесь, что пользователь взаимодействует со страницей перед воспроизведением
-//     // document.body.addEventListener('click', () => {
-//         audio.play().catch(error => {
-//             alert(error)
-//             console.error('Ошибка воспроизведения аудио: ', error);
-//             let d = document.createElement('div')
-//             d.innerHTML = `${JSON.stringify(error)}`
-//             document.body.appendChild(d)
-//         });
-//     // }, { once: true });  // Слушатель удалится после первого клика
+    // Убедитесь, что пользователь взаимодействует со страницей перед воспроизведением
+    // document.body.addEventListener('click', () => {
+        audio.play().catch(error => {
+            alert(error)
+            console.error('Ошибка воспроизведения аудио: ', error);
+            let d = document.createElement('div')
+            d.innerHTML = `${JSON.stringify(error)}`
+            document.body.appendChild(d)
+        });
+    // }, { once: true });  // Слушатель удалится после первого клика
     
     
 
-// }, 5000)
+}, 5000)
 
     
 })
