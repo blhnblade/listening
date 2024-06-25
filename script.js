@@ -31,13 +31,13 @@ document.querySelector('#play').addEventListener('click', () => {
     // document.body.appendChild(audio);
     
     // Добавление обработчиков ошибок
-    audio.addEventListener('error', (e) => {
-        alert(e)
-        console.error('Ошибка воспроизведения аудио: ', e);
-        let d = document.createElement('div')
-        d.innerHTML = `${e}`
-        document.body.appendChild(d)
-    });
+    // audio.addEventListener('error', (e) => {
+    //     alert(e)
+    //     console.error('Ошибка воспроизведения аудио: ', e);
+    //     let d = document.createElement('div')
+    //     d.innerHTML = `${e}`
+    //     document.body.appendChild(d)
+    // });
 
     audio.play()
     
