@@ -113,3 +113,28 @@ setTimeout(() => {
 })
 
 
+document.querySelector('#timeout').addEventListener('click', ( ) => {
+    setTimeout(() => {
+        alert('timeout ')
+        let byteChars = atob(s);
+    let byteNumbers = new Array(byteChars.length);
+    
+    for (let i = 0; i < byteChars.length; i++) {
+        byteNumbers[i] = byteChars.charCodeAt(i);
+    }
+    
+    // Преобразование массива чисел в Uint8Array
+    let byteArray = new Uint8Array(byteNumbers);
+    
+    // Создание Blob из Uint8Array с указанием типа MIME, совместимого с Safari
+    // let blob = new Blob([byteArray]);
+    let blob = new Blob([byteArray], { type: 'audio/mp3' });
+    
+    // Создание URL для Blob
+    let url = URL.createObjectURL(blob);
+        document.querySelector('audio').src = url
+        document.querySelector('audio').load()
+        document.querySelector('audio').play()
+    }, 3000)
+})
+
