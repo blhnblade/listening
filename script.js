@@ -27,7 +27,9 @@ document.body.appendChild(audio);
 audio.addEventListener('error', (e) => {
     alert(e)
     console.error('Ошибка воспроизведения аудио: ', e);
-    document.body.appendChild(e)
+    let d = document.createElement('div')
+    d.innerHTML = `${e}`
+    document.body.appendChild(d)
 });
 
 // Убедитесь, что пользователь взаимодействует со страницей перед воспроизведением
@@ -35,7 +37,9 @@ document.body.addEventListener('click', () => {
     audio.play().catch(error => {
         alert(error)
         console.error('Ошибка воспроизведения аудио: ', error);
-        document.body.appendChild(error)
+        let d = document.createElement('div')
+        d.innerHTML = `${error}`
+        document.body.appendChild(d)
     });
 }, { once: true });  // Слушатель удалится после первого клика
 
