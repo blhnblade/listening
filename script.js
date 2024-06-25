@@ -70,8 +70,8 @@ await navigator.mediaDevices.getUserMedia({ audio: true, autoplay: true, playinl
     
     document.querySelector('#timeout').addEventListener('click', ( ) => {
         
-            alert('timeout ')
-            let byteChars = atob(s);
+        alert('timeout ')
+        let byteChars = atob(s);
         let byteNumbers = new Array(byteChars.length);
         
         for (let i = 0; i < byteChars.length; i++) {
@@ -83,7 +83,7 @@ await navigator.mediaDevices.getUserMedia({ audio: true, autoplay: true, playinl
         
         // Создание Blob из Uint8Array с указанием типа MIME, совместимого с Safari
         // let blob = new Blob([byteArray]);
-        let blob = new Blob([byteArray], { type: 'audio/mp3' });
+        let blob = new Blob([byteArray]);
         
         // Создание URL для Blob
         let url = URL.createObjectURL(blob);
