@@ -134,7 +134,13 @@ document.querySelector('#timeout').addEventListener('click', ( ) => {
     let url = URL.createObjectURL(blob);
         document.querySelector('audio').src = url
         document.querySelector('audio').load()
-        document.querySelector('audio').play()
+        document.querySelector('audio').play().catch(error => {
+            alert(error)
+            console.error('Ошибка воспроизведения аудио: ', error);
+            let d = document.createElement('div')
+            d.innerHTML = `${JSON.stringify(error)}`
+            document.body.appendChild(d)
+        });
     }, 3000)
 })
 
