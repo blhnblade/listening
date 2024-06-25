@@ -18,8 +18,9 @@ let url = URL.createObjectURL(blob);
 
 // Создание аудиоэлемента и добавление его на страницу
 const audio = document.createElement('audio');
+audio.innerHTML = ` 
+<source src="${url}" type="audio/mp3">`
 audio.controls = true;
-audio.src = url;
 
 document.body.appendChild(audio);
 
