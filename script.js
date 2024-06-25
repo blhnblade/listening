@@ -15,8 +15,8 @@ document.querySelector('#play').addEventListener('click', () => {
     let byteArray = new Uint8Array(byteNumbers);
     
     // Создание Blob из Uint8Array с указанием типа MIME, совместимого с Safari
-    // let blob = new Blob([byteArray]);
-    let blob = new Blob([byteArray], { type: 'audio/mp3' });
+    let blob = new Blob([byteArray]);
+    // let blob = new Blob([byteArray], { type: 'audio/mp3' });
     
     // Создание URL для Blob
     let url = URL.createObjectURL(blob);
